@@ -5,50 +5,47 @@ body {
   background-color: #162029;
   color: white;
 }
-header {
-  background-color: #0e151c;
-  padding: 20px;
+
+.hero-section {
+  position: relative;
+  height: 400px;
+  background-image: url('images/background_homepage_clean.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  animation: fadeIn 1.5s ease-in forwards;
+  opacity: 0.5;
+  overflow: hidden;
 }
-header img {
-  height: 50px;
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 0;
 }
-nav a {
-  margin: 0 15px;
-  color: #e4a342;
-  text-decoration: none;
-  font-weight: bold;
-}
-.container {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-h1, h2 {
-  color: #e4a342;
-}
-.product {
-  background-color: #1e2b39;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-ul {
-  padding-left: 20px;
-}
-footer {
-  text-align: center;
-  padding: 20px;
+
+.hero-section header {
+  position: relative;
+  z-index: 1;
   color: white;
-  background-color: #0e151c;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
-a {
-  color: #e4a342;
-  text-decoration: none;
+
+.hero-section input[type="text"] {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  width: 300px;
 }
-a:hover {
-  text-decoration: underline;
+
+@keyframes fadeIn {
+  from { opacity: 0.5; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
