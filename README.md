@@ -1,1 +1,1 @@
-# london-lids-product-portfolio
+# london-lids-limited-products

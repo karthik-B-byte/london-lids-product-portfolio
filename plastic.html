@@ -4,14 +4,130 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Plastic Containers</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Cursor pointer for clickable h3 and images */
+    .product h3, .product img {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <header><a href="index.html">← Back to Home</a></header>
-  <div class="container">
+  <header>
+    <a href="index.html" class="back-btn">← Back to Home</a>
     <h1>Plastic Containers</h1>
-    <div class='product'><h2>Microwave Container - 1000ML</h2><p>Microwave-safe containers with black/clear base.</p><ul><li>Sizes: 500ml, 650ml, 750ml, 1000ml</li><li>Reusable, Freezer & Microwave Safe</li><li>Pack Size: 150 Sets</li></ul></div><div class='product'><h2>Salad Container - 750ML</h2><p>Crystal-clear container ideal for salads.</p><ul><li>Size: 166 x 174 x 73 mm</li><li>Pack Size: 300</li></ul></div><div class='product'><h2>Deli Pot - 16oz</h2><p>Plastic deli container suitable for hot and cold foods.</p><ul><li>Sizes: 8oz, 10oz, 12oz, 16oz, 24oz, 30oz</li><li>Universal Lid</li><li>Pack Size: 250 Sets</li></ul></div>
+  </header>
+
+  <div class="container">
+
+    <h2 style="color: #e4a342;">Microwave Containers</h2>
+    <div class="products">
+      <div class="product">
+        <img src="product_images/microwave black base.png" alt="Microwave Black Base" />
+        <h3>Microwave – Black Base</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 500ml, 650ml, 750ml, 1000ml</li>
+          <li>Quality: HD / Standard</li>
+        </ul>
+      </div>
+      <div class="product">
+        <img src="product_images/microwave clear base.png" alt="Microwave Clear Base" />
+        <h3>Microwave – Clear Base</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 500ml, 650ml, 750ml, 1000ml</li>
+          <li>Quality: HD / Standard</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="color: #e4a342;">Black Base Containers</h2>
+    <div class="products">
+      <div class="product">
+        <img src="product_images/black rectangular container.png" alt="Black Rectangular" />
+        <h3>Rectangular Containers</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 16oz, 24oz, 28oz, 32oz, 38oz</li>
+          <li>Special: 32oz (2 Compartment)</li>
+        </ul>
+      </div>
+      <div class="product">
+        <img src="product_images/black round container.png" alt="Black Round" />
+        <h3>Round Containers</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 12oz, 16oz, 24oz, 28oz, 32oz, 48oz</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="color: #e4a342;">Salad Containers</h2>
+    <div class="products">
+      <div class="product">
+        <img src="product_images/Salad container 750ml.png" alt="Salad 750ml" />
+        <h3>Salad Containers</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 250ml, 375ml, 500ml, 750ml, 1000ml, 1250ml, 2000ml</li>
+          <li>Material: Clear Plastic</li>
+          <li>Packaging: 200–500 pcs</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="color: #e4a342;">Deli Pots</h2>
+    <div class="products">
+      <div class="product">
+        <img src="product_images/16oz deli pot.png" alt="Deli Pots" />
+        <h3>Deli Pots</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 8oz, 10oz, 12oz, 16oz, 24oz, 30oz</li>
+          <li>Universal Lid</li>
+          <li>250 sets/box</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 style="color: #e4a342;">Sauce Cups</h2>
+    <div class="products">
+      <div class="product">
+        <img src="product_images/sauce cup 2oz hinged.png" alt="Hinged Lid" />
+        <h3>Sauce Cups – Hinged Lid</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 1oz, 2oz, 4oz, 6oz</li>
+        </ul>
+      </div>
+      <div class="product">
+        <img src="product_images/sauce cup 2oz separate.png" alt="Separate Lid" />
+        <h3>Sauce Cups – Separate Lid</h3>
+        <ul class="specs" style="display:none;">
+          <li>Sizes: 2oz, 4oz</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
-  <footer>&copy; 2025 London Lids Limited. All rights reserved.</footer>
+
+  <footer>
+    <p><a href="index.html">← Back to Home</a></p>
+    <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Accordion toggle for specs on image or title click
+    document.querySelectorAll('.product').forEach(product => {
+      const img = product.querySelector('img');
+      const title = product.querySelector('h3');
+      const specs = product.querySelector('.specs');
+
+      function toggleSpecs() {
+        if (specs.style.display === 'none' || specs.style.display === '') {
+          specs.style.display = 'block';
+        } else {
+          specs.style.display = 'none';
+        }
+      }
+
+      img.addEventListener('click', toggleSpecs);
+      title.addEventListener('click', toggleSpecs);
+    });
+  </script>
 </body>
 </html>
