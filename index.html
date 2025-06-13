@@ -3,35 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="London Lids Ltd - Manufacturers & Suppliers of All Catering Disposables" />
+  <meta property="og:title" content="London Lids Ltd" />
+  <meta property="og:description" content="Your trusted partner in food packaging solutions for over 20 years." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:url" content="https://www.londonlidsltd.co.uk" />
   <title>London Lids Ltd</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-
-  <!-- Meta Description for SEO -->
-  <meta name="description" content="London Lids Ltd – Trusted family-run food packaging suppliers for over 20 years. Browse our range of catering disposables and download our product catalog." />
-
-  <!-- Open Graph tags for sharing -->
-  <meta property="og:title" content="London Lids Ltd - Catering Disposables" />
-  <meta property="og:description" content="Explore our product range in aluminium, plastic, bagasse, foil & more." />
-  <meta property="og:image" content="https://karthik-b-byte.github.io/london-lids-product-portfolio/logo.png" />
-  <meta property="og:url" content="https://karthik-b-byte.github.io/london-lids-product-portfolio/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Optional Smooth Scroll -->
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
 </head>
 <body class="home-page">
-
-  <!-- ☰ Hamburger Icon -->
+  <!-- Hamburger Menu -->
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -47,7 +29,7 @@
     <a href="Product Catalog Presentation RD.pdf" download>Download Catalog</a>
   </nav>
 
-  <!-- Overlay for closing sidebar -->
+  <!-- Overlay -->
   <div id="overlay" onclick="closeMenu()"></div>
 
   <!-- Header Section -->
@@ -58,7 +40,7 @@
       <div class="slide" style="background-image:url('product_images/background3.png')"></div>
 
       <div class="hero-content">
-        <img src="logo.png" alt="London Lids Ltd Company Logo" class="logo" />
+        <img src="logo.png" alt="London Lids Logo" class="logo" />
         <h1>London Lids Ltd</h1>
         <h2>Manufacturers & Suppliers of All Catering Disposables</h2>
         <h3>A Trusted Family Company In Food Packaging For Over 20 Years</h3>
@@ -76,6 +58,7 @@
   <!-- Main Product Section -->
   <main class="container">
     <div id="product-list" class="products">
+      <!-- Product Cards -->
       <div class="product">
         <a href="aluminium.html">
           <img src="product_images/aluminium-category.png" alt="Aluminium" />
@@ -127,9 +110,9 @@
     <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script>
-    // Sidebar toggle
+    // Sidebar menu toggle
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
@@ -174,6 +157,5 @@
       slideInterval = setInterval(nextSlide, 5000);
     }
   </script>
-
 </body>
 </html>
