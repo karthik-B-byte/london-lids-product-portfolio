@@ -5,16 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aluminium Foil Containers</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* === Accordion styles === */
+    .product {
+      background-color: #1f2c38;
+      border-radius: 10px;
+      padding: 16px;
+      width: 280px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      margin: 15px auto;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .product h3 {
+      text-align: center;
+      width: 100%;
+      padding: 12px 0;
+      margin: 0;
+      background-color: #e4a342;
+      color: #162029;
+      border-radius: 6px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .product h3:hover,
+    .product:hover h3 {
+      background-color: #c98d2f;
+      color: white;
+    }
+
+    .product-specs {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #162029;
+      border-radius: 0 0 10px 10px;
+      padding: 0 12px;
+      margin-top: 10px;
+      color: white;
+    }
+
+    .product-specs ul {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+
+    .product.active .product-specs {
+      max-height: 500px; /* enough for specs content */
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    /* Container and layout */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .product {
+        width: 90%;
+      }
+    }
+
+  </style>
 </head>
 <body>
   <!-- Header -->
-  <header>
+  <header style="position: relative; padding: 20px; background-color: #0e141a;">
      <a href="index.html" class="back-btn">← Back to Home</a>
-    <h1>Aluminium Foil Containers</h1>
+    <h1 style="text-align: center; color: #e4a342;">Aluminium Foil Containers</h1>
   </header>
 
   <div class="container">
-    <h2>Silver Brand</h2>
+    <h2 style="color: #e4a342; text-align:center;">Silver Brand</h2>
     <div class="products">
       <!-- Product 1 -->
       <div class="product">
@@ -43,7 +120,7 @@
       </div>
     </div>
 
-    <h2>Gold Brand</h2>
+    <h2 style="color: #e4a342; margin-top: 40px; text-align:center;">Gold Brand</h2>
     <div class="products">
       <!-- Product 3 -->
       <div class="product">
@@ -169,20 +246,28 @@
   </div>
 
   <!-- Footer -->
-  <footer>
-    <a href="index.html" class="back-button">← Back to Home</a>
+  <footer style="text-align:center; padding:20px; background-color:#0e141a; color:white; margin-top:40px;">
+    <a href="index.html" class="back-button" style="background:#e4a342; color:#162029; padding:10px 20px; border-radius:8px; font-weight:bold; text-decoration:none; transition: background-color 0.3s ease;">← Back to Home</a>
     <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
   </footer>
 
   <script>
+    // Toggle specs accordion on image or h3 click
     document.querySelectorAll('.product').forEach(product => {
-      const toggleSpecs = () => product.classList.toggle('active');
-      const clickableElements = product.querySelectorAll('img, h3');
-      
-      clickableElements.forEach(element => {
-        element.addEventListener('click', toggleSpecs);
-        element.style.cursor = 'pointer'; // Consistent cursor
-      });
+      // Click handler function
+      const toggleSpecs = () => {
+        product.classList.toggle('active');
+      };
+
+      // Add click listeners to image and h3 inside each product
+      const img = product.querySelector('img');
+      const title = product.querySelector('h3');
+
+      img.style.cursor = 'pointer';
+      title.style.cursor = 'pointer';
+
+      img.addEventListener('click', toggleSpecs);
+      title.addEventListener('click', toggleSpecs);
     });
   </script>
 </body>
