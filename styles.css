@@ -320,3 +320,40 @@ footer a:hover {
   color: white;
   cursor: pointer;
 }
+/* 🌐 Global Search Styles */
+#global-search-container {
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+}
+#global-search {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+#search-results {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+#search-results a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #000;
+}
+#search-results a:hover {
+  background-color: #eee;
+}
+
