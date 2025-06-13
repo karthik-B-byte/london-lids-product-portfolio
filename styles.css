@@ -2,8 +2,8 @@
 /* === Global Styles === */
 body {
   font-family: Arial, sans-serif;
-  background-color: #162029;
-  color: white;
+  background-color: white;
+  color: #162029;
   margin: 0;
   padding: 0;
 }
@@ -186,7 +186,7 @@ nav.active {
 }
 
 .product {
-  background-color: #1f2c38;
+  background-color: #162029;
   border-radius: 10px;
   padding: 16px;
   width: 100%;
