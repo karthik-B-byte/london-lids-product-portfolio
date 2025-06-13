@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="home-page">
-<!-- 🌐 Global Search -->
+
+  <!-- 🌐 Global Search -->
   <div id="global-search-container">
     <input type="text" id="global-search" placeholder="Search products..." oninput="handleSearch(this.value)" />
     <div id="search-results"></div>
@@ -44,7 +45,7 @@
         <h1>London Lids Ltd</h1>
         <h2>Manufacturers & Suppliers of All Catering Disposables</h2>
         <h3>A Trusted Family Company In Food Packaging For Over 20 Years</h3>
-        <input type="text" id="search" placeholder="Search categories..." />
+        <!-- Removed the old search bar here -->
       </div>
 
       <div class="dots">
@@ -58,7 +59,6 @@
   <!-- Main Product Section -->
   <main class="container">
     <div id="product-list" class="products">
-      <!-- Repeat your product cards here -->
       <div class="product">
         <a href="aluminium.html">
           <img src="product_images/aluminium-category.png" alt="Aluminium" />
@@ -124,17 +124,6 @@
       document.getElementById('overlay').classList.remove('active');
     }
 
-    // Search filter
-    const search = document.getElementById("search");
-    const products = document.querySelectorAll(".product");
-    search.addEventListener("input", () => {
-      const query = search.value.toLowerCase();
-      products.forEach(product => {
-        const text = product.innerText.toLowerCase();
-        product.style.display = text.includes(query) ? "" : "none";
-      });
-    });
-
     // Hero slider
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -157,6 +146,6 @@
       slideInterval = setInterval(nextSlide, 5000);
     }
   </script>
- <script src="search.js"></script>
+  <script src="search.js"></script>
 </body>
 </html>
