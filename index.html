@@ -4,325 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>London Lids Ltd</title>
-  <style>
-    /* === Global Styles === */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #162029;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-    a {
-      color: #e4a342;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    /* === Header Section === */
-    header {
-      text-align: center;
-      background-color: #0e141a;
-      position: relative;
-      color: #e4a342;
-    }
-    /* Hamburger Menu */
-    .menu-toggle {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      cursor: pointer;
-      z-index: 10;
-    }
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background-color: #e4a342;
-      margin: 5px 0;
-    }
-    /* Sidebar Navigation */
-    nav {
-      position: fixed;
-      left: -250px;
-      top: 0;
-      width: 250px;
-      height: 100%;
-      background-color: #1a2733;
-      overflow-x: hidden;
-      transition: left 0.3s ease;
-      padding-top: 60px;
-      z-index: 9;
-    }
-    nav.active {
-      left: 0;
-    }
-    nav a {
-      padding: 12px 20px;
-      font-size: 18px;
-      color: white;
-      display: block;
-    }
-    nav a:hover {
-      background-color: #e4a342;
-      color: #162029;
-    }
-    /* Close Button inside nav */
-    nav .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 25px;
-      color: #e4a342;
-      cursor: pointer;
-      user-select: none;
-      transition: color 0.3s ease;
-    }
-    nav .close-btn:hover {
-      color: #c98d2f;
-    }
-    /* Sidebar Overlay */
-    #overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background-color: rgba(0,0,0,0.3);
-      display: none;
-      z-index: 8;
-    }
-    #overlay.active {
-      display: block;
-    }
-    /* === Hero Section === */
-    .hero-section.slider {
-      position: relative;
-      height: 400px;
-      overflow: hidden;
-    }
-    .hero-section .slide {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      z-index: 0;
-    }
-    .hero-section .slide.active {
-      opacity: 1;
-      z-index: 1;
-    }
-    .hero-section .hero-content {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      background: linear-gradient(rgba(22,32,41,0.7), rgba(22,32,41,0.7)); /* subtle overlay for contrast */
-    }
-    .hero-section .logo {
-      width: 150px;
-      margin-bottom: 10px;
-    }
-    .hero-section h1 {
-      font-size: 2em;
-      margin: 10px 0 5px;
-      color: #e4a342;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    }
-    .hero-section h2 {
-      font-size: 1.5em;
-      margin: 5px 0;
-      color: white;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    }
-    .hero-section h3 {
-      font-size: 1em;
-      margin: 5px 0 15px;
-      color: #e4a342;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    }
-    /* Search input wrapper with clear button */
-    .search-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-    .hero-section input[type="text"] {
-      width: 300px;
-      max-width: 90vw;
-      padding: 10px 40px 10px 10px;
-      border-radius: 5px;
-      border: none;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    #clear-search {
-      position: absolute;
-      right: 8px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: transparent;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      color: #e4a342;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-      user-select: none;
-    }
-    #clear-search:hover {
-      opacity: 1;
-    }
-    /* Slider dots */
-    .dots {
-      position: absolute;
-      bottom: 15px;
-      width: 100%;
-      text-align: center;
-      z-index: 3;
-    }
-    .dots .dot {
-      height: 12px;
-      width: 12px;
-      margin: 0 6px;
-      background-color: rgba(255,255,255,0.6);
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .dots .dot.active {
-      background-color: #e4a342;
-    }
-    /* Slider arrows */
-    .hero-section .slide-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.4);
-      border: none;
-      color: #e4a342;
-      font-size: 30px;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 4px;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      z-index: 4;
-    }
-    .hero-section .slide-arrow:hover {
-      background-color: rgba(0,0,0,0.7);
-    }
-    .hero-section .slide-arrow.prev {
-      left: 20px;
-    }
-    .hero-section .slide-arrow.next {
-      right: 20px;
-    }
-    /* === Main Content === */
-    .container {
-      padding: 30px 15px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      justify-items: center;
-    }
-    .product {
-      background-color: #162029;
-      border-radius: 10px;
-      padding: 16px;
-      width: 100%;
-      max-width: 280px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s ease;
-    }
-    .product:hover {
-      transform: translateY(-5px);
-    }
-    /* Product image zoom on hover */
-    .product img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 14px;
-      object-fit: contain;
-      transition: transform 0.3s ease;
-    }
-    .product:hover img {
-      transform: scale(1.05);
-    }
-    .product h3 {
-      text-align: center;
-      width: 100%;
-      padding: 12px 0;
-      margin: 0;
-      background-color: #e4a342;
-      color: #162029;
-      border-radius: 6px;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-    .product h3:hover {
-      background-color: #c98d2f;
-      color: white;
-    }
-    /* === Footer === */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #0e141a;
-      color: white;
-      margin-top: 40px;
-    }
-    footer a {
-      display: inline-block;
-      background-color: #e4a342;
-      color: #162029;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    footer a:hover {
-      background-color: #c98d2f;
-      color: white;
-    }
-    /* === Responsive adjustments === */
-    @media (max-width: 1024px) {
-      .products {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    @media (max-width: 768px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .menu-toggle {
-        top: 15px;
-        left: 15px;
-      }
-    }
-    @media (max-width: 480px) {
-      .products {
-        grid-template-columns: 1fr;
-      }
-      .hero-section input[type="text"] {
-        width: 90vw;
-      }
-    }
-  </style>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="home-page">
@@ -336,7 +17,6 @@
 
   <!-- Sidebar Navigation -->
   <nav id="sidebar">
-    <span class="close-btn" onclick="closeMenu()">&times;</span>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="products.html" class="special-products">Products</a>
@@ -359,10 +39,7 @@
         <h1>London Lids Ltd</h1>
         <h2>Manufacturers & Suppliers of All Catering Disposables</h2>
         <h3>A Trusted Family Company In Food Packaging For Over 20 Years</h3>
-        <div class="search-wrapper">
-          <input type="text" id="search" placeholder="Search categories..." />
-          <button id="clear-search" title="Clear search">&times;</button>
-        </div>
+        <input type="text" id="search" placeholder="Search categories..." />
       </div>
 
       <div class="dots">
@@ -370,16 +47,13 @@
         <span class="dot" onclick="setSlide(1)"></span>
         <span class="dot" onclick="setSlide(2)"></span>
       </div>
-
-      <!-- Slider arrows -->
-      <button class="slide-arrow prev" onclick="prevSlide()">&#10094;</button>
-      <button class="slide-arrow next" onclick="nextSlide()">&#10095;</button>
     </div>
   </header>
 
   <!-- Main Product Section -->
   <main class="container">
     <div id="product-list" class="products">
+      <!-- Repeat your product cards here -->
       <div class="product">
         <a href="aluminium.html">
           <img src="product_images/aluminium-category.png" alt="Aluminium" />
@@ -447,9 +121,7 @@
 
     // Search filter
     const search = document.getElementById("search");
-    const clearBtn = document.getElementById("clear-search");
     const products = document.querySelectorAll(".product");
-
     search.addEventListener("input", () => {
       const query = search.value.toLowerCase();
       products.forEach(product => {
@@ -458,17 +130,15 @@
       });
     });
 
-    clearBtn.addEventListener("click", () => {
-      search.value = '';
-      search.dispatchEvent(new Event('input'));
-    });
-
     // Hero slider
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     let currentSlide = 0;
     let slideInterval = setInterval(nextSlide, 5000);
 
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
     function goToSlide(n) {
       slides[currentSlide].classList.remove('active');
       dots[currentSlide].classList.remove('active');
@@ -476,21 +146,9 @@
       slides[currentSlide].classList.add('active');
       dots[currentSlide].classList.add('active');
     }
-
-    function nextSlide() {
-      goToSlide(currentSlide + 1);
-      resetSlideInterval();
-    }
-    function prevSlide() {
-      goToSlide(currentSlide - 1);
-      resetSlideInterval();
-    }
     function setSlide(n) {
-      goToSlide(n);
-      resetSlideInterval();
-    }
-    function resetSlideInterval() {
       clearInterval(slideInterval);
+      goToSlide(n);
       slideInterval = setInterval(nextSlide, 5000);
     }
   </script>
