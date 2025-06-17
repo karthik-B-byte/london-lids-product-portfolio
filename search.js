@@ -177,8 +177,7 @@ function handleSearch(query) {
       }
     });
 
-    container.appendChild(link);
-  });
+    
 
   container.style.display = "block";
 }
