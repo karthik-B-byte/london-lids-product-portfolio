@@ -312,7 +312,7 @@ footer a:hover {
 
 /* 🌐 Global Search Styles */
 #global-search-container {
-  position: relative; /* Positions it relative to the viewport */
+  position:fixed; /* Positions it relative to the viewport */
   top: 20px;
   right: 20px;
   width: 300px;
