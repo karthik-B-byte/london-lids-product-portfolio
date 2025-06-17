@@ -308,3 +308,52 @@ footer a:hover {
   color: white;
   cursor: pointer;
 }
+/* 🌐 Global Search Styles */
+#global-search-container {
+  position: fixed; /* Positions it relative to the viewport */
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  z-index: 1000;
+  text-align: left;
+  margin: 0;
+}
+
+#global-search {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+#search-results {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+#search-results a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+#search-results a:hover {
+  background-color: #eee;
+}
+.product.highlight {
+  box-shadow: 0 0 15px 5px #e4a342;
+  transition: box-shadow 0.3s ease;
+}
+
+
