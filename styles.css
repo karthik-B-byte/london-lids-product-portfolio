@@ -137,14 +137,7 @@ nav.active {
   color: #e4a342;
   text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
-.hero-section global-search {
-  width: 100%;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
-  outline: none;
-}
+
 
 /* Slider dots */
 .dots {
