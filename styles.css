@@ -336,6 +336,8 @@ footer a:hover {
 
 #search-results {
   position: absolute;
+  top: calc(100% + 5px); /* Position just below the input */
+  left: 0;
   width: 100%;
   background-color: #fff;
   color: #000;
@@ -346,6 +348,7 @@ footer a:hover {
   overflow-y: auto;
   z-index: 100;
 }
+
 
 #search-results a {
   display: block;
