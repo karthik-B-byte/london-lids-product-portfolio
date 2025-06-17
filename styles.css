@@ -138,17 +138,6 @@ nav.active {
   color: #e4a342;
   text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
-
-.hero-section input[type="text"] {
-  width: 300px;
-  max-width: 90vw;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  margin-top: 10px;
-}
-
 /* Slider dots */
 .dots {
   position: absolute;
