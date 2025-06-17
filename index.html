@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="home-page">
-<!-- 🌐 Global Search -->
-  <div id="global-search-container">
-    <input type="text" id="global-search" placeholder="Search products..." oninput="handleSearch(this.value)" />
-    <div id="search-results"></div>
-  </div>
- 
+<div id="header-placeholder"></div>
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+    });
+</script>
+
   <!-- ☰ Hamburger Icon -->
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
