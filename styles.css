@@ -311,7 +311,7 @@ footer a:hover {
 
 /* 🌐 Global Search Styles */
 #global-search-container {
-  position: relative;
+  position: fixed;
   top: 20px;
   right: 20px;
   width: 300px;
