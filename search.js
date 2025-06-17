@@ -176,7 +176,8 @@ function handleSearch(query) {
         container.style.display = "none"; // hide dropdown
       }
     });
-
+     container.appendChild(link);
+  });
     
 
   container.style.display = "block";
