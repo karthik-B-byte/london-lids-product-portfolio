@@ -353,4 +353,9 @@ footer a:hover {
 #search-results a:hover {
   background-color: #eee;
 }
+.product.highlight {
+  box-shadow: 0 0 15px 5px #e4a342;
+  transition: box-shadow 0.3s ease;
+}
+
 
