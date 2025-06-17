@@ -1,3 +1,4 @@
+
 /* === Global Styles === */
 body {
   font-family: Arial, sans-serif;
@@ -174,7 +175,7 @@ nav.active {
 }
 
 .product {
-  background-color: #1f2c38;
+  background-color: #162029;
   border-radius: 10px;
   padding: 16px;
   width: 100%;
@@ -308,6 +309,7 @@ footer a:hover {
   color: white;
   cursor: pointer;
 }
+
 /* 🌐 Global Search Styles */
 #global-search-container {
   position: fixed; /* Positions it relative to the viewport */
