@@ -8,12 +8,7 @@
 </head>
 <body class="home-page">
 
-  <!-- 🌐 Global Search -->
-  <div id="global-search-container">
-    <input type="text" id="global-search" placeholder="Search products..." oninput="handleSearch(this.value)" />
-    <div id="search-results"></div>
-  </div>
-
+ 
   <!-- ☰ Hamburger Icon -->
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
@@ -45,10 +40,13 @@
         <h1>London Lids Ltd</h1>
         <h2>Manufacturers & Suppliers of All Catering Disposables</h2>
         <h3>A Trusted Family Company In Food Packaging For Over 20 Years</h3>
-        <!-- Removed the old search bar here -->
-      </div>
-
-      <div class="dots">
+         <!-- 🌐 Global Search -->
+  <div id="global-search-container">
+    <input type="text" id="global-search" placeholder="Search products..." oninput="handleSearch(this.value)" />
+    <div id="search-results"></div>
+  </div>
+  </div>
+  <div class="dots">
         <span class="dot active" onclick="setSlide(0)"></span>
         <span class="dot" onclick="setSlide(1)"></span>
         <span class="dot" onclick="setSlide(2)"></span>
