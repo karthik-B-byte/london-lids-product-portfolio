@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="home-page">
+<!-- 🌐 Global Search -->
+  <div id="global-search-container">
+    <input type="text" id="global-search" placeholder="Search products..." oninput="handleSearch(this.value)" />
+    <div id="search-results"></div>
+  </div>
 
   <!-- ☰ Hamburger Icon -->
   <div class="menu-toggle" onclick="toggleMenu()">
