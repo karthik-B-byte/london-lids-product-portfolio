@@ -182,3 +182,10 @@ function handleSearch(query) {
 
   container.style.display = "block";
 }
+document.addEventListener("click", function (e) {
+  const searchBox = document.getElementById("global-search-container");
+  if (!searchBox.contains(e.target)) {
+    document.getElementById("search-results").style.display = "none";
+  }
+});
+
