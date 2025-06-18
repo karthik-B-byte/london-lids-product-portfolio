@@ -147,8 +147,6 @@ nav.active {
   margin-top: 10px;
 }
 
-
-
 /* Slider dots */
 .dots {
   position: absolute;
@@ -348,7 +346,6 @@ footer a:hover {
   overflow-y: auto;
   z-index: 100;
 }
-
 
 #search-results a {
   display: block;
