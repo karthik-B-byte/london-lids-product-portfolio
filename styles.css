@@ -1,3 +1,4 @@
+
 /* === Global Styles === */
 body {
   font-family: Arial, sans-serif;
@@ -137,16 +138,6 @@ nav.active {
   color: #e4a342;
   text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
-.hero-section input[type="text"] {
-  width: 300px;
-  max-width: 90vw;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  margin-top: 10px;
-}
-
 /* Slider dots */
 .dots {
   position: absolute;
@@ -179,7 +170,7 @@ nav.active {
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 24px; /* spacing between cards */
   justify-items: center;
 }
 
@@ -201,7 +192,7 @@ nav.active {
 .product img {
   width: 100%;
   border-radius: 8px;
-  margin-bottom: 14px;
+  margin-bottom: 14px; /* spacing between image and title */
   object-fit: contain;
 }
 .product h3 {
@@ -251,22 +242,29 @@ footer a:hover {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+  .hero-section input[type="text"] {
+    width: 80%;
+  }
 }
-
 @media (max-width: 768px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+  .hero-section input[type="text"] {
+    width: 90%;
+  }
   .product {
     max-width: none;
   }
 }
-
 @media (max-width: 480px) {
   .products {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+  .hero-section input[type="text"] {
+    width: 95%;
   }
 }
 
@@ -314,7 +312,7 @@ footer a:hover {
 
 /* 🌐 Global Search Styles */
 #global-search-container {
-  position: fixed;
+  position: fixed; /* Positions it relative to the viewport */
   top: 20px;
   right: 20px;
   width: 300px;
@@ -334,8 +332,6 @@ footer a:hover {
 
 #search-results {
   position: absolute;
-  top: calc(100% + 5px); /* Position just below the input */
-  left: 0;
   width: 100%;
   background-color: #fff;
   color: #000;
@@ -357,8 +353,9 @@ footer a:hover {
 #search-results a:hover {
   background-color: #eee;
 }
-
 .product.highlight {
   box-shadow: 0 0 15px 5px #e4a342;
   transition: box-shadow 0.3s ease;
 }
+
+
